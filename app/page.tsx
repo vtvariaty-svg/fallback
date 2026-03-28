@@ -276,12 +276,12 @@ function FinalCtaSection() {
           >
             <MessageCircle className="w-5 h-5" /> Iniciar conversa no WhatsApp
           </a>
-          <button
-            onClick={() => window.location.href = 'mailto:contato@fallbackautomacoes.com.br'}
+          <a
+            href="mailto:contato@fallbackautomacoes.com.br"
             className="px-8 py-4 rounded-xl bg-surface text-white font-bold flex items-center justify-center gap-2 hover:bg-surface-border transition-all border border-white/10"
           >
             Enviar um E-mail
-          </button>
+          </a>
         </div>
       </div>
     </section>
