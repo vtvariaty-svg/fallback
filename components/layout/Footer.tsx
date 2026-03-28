@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <Link href="/" className="font-bold text-xl tracking-tight text-white flex items-center gap-2">
-             <div className="w-5 h-5 rounded bg-primary flex items-center justify-center">
-                <span className="text-white text-[10px] font-black">F</span>
+            <Link href="/" className="font-bold text-2xl tracking-tighter text-white flex items-center gap-3 group mb-4">
+              <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20 transition-transform">
+                <span className="text-white text-base font-black italic">F</span>
               </div>
-              <span>Fallback <span className="text-primary font-medium">Automações</span></span>
+              <span>Fallback<span className="text-primary italic">.</span></span>
             </Link>
-            <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-sm">
-              Desenvolvemos automações e sistemas personalizados para empresas. Nossa missão é transformar processos manuais em eficiência digital.
+            <p className="mt-6 text-gray-400 text-lg leading-relaxed max-w-sm">
+              Especialistas em transformar processos manuais em eficiência digital. Arquitetamos soluções sob medida para o crescimento do seu negócio.
             </p>
           </div>
           <div>

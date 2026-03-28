@@ -4,10 +4,10 @@ import { getWhatsAppUrl, COMPANY_EMAIL } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-24 md:gap-32 w-full pt-20">
+    <div className="flex flex-col gap-24 md:gap-40 w-full pt-20 pb-20">
       <HeroSection />
       <ServicesSection />
-      <BenefitsSection />
+      <WhyChooseSection />
       <HowItWorksSection />
       <ExamplesSection />
       <FaqSection />
@@ -18,37 +18,39 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative px-6 pt-16 pb-12 md:pt-32 md:pb-24 max-w-7xl mx-auto flex flex-col items-center text-center">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/20 blur-[120px] rounded-full pointer-events-none -z-10" />
+    <section className="relative px-6 pt-20 pb-16 md:pt-40 md:pb-32 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-grid pointer-events-none -z-10 opacity-60" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[130px] rounded-full pointer-events-none -z-10" />
       
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-surface-border text-xs font-semibold text-gray-300 mb-8">
-        <span className="flex w-2 h-2 rounded-full bg-green-500"></span>
-        Projetos com valores a partir de R$ 699
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold text-gray-300 mb-10 animate-fade-in shadow-xl">
+        <span className="flex w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+        Soluções profissionais a partir de R$ 699
       </div>
 
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mb-6">
-        Automações e sistemas <span className="text-gradient">personalizados</span> para empresas
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white max-w-5xl mb-8 leading-[0.95] md:leading-[0.9]">
+        Sua empresa no <span className="text-gradient">piloto automático</span>
       </h1>
       
-      <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-        Desenvolvemos soluções digitais sob medida para automatizar processos, 
-        organizar sua operação e transformar ideias de negócio em ferramentas reais.
+      <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mb-12 leading-relaxed font-medium">
+        Desenvolvemos sistemas e automações exclusivas que eliminam o trabalho manual 
+        e transformam sua operação em uma máquina de eficiência.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+      <div className="flex flex-col sm:flex-row items-center gap-5 w-full justify-center">
         <Link 
           href="/contato"
-          className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-semibold flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_-5px_rgba(79,70,229,0.4)]"
+          className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02] active:scale-[0.98]"
         >
-          Solicitar orçamento <ArrowRight className="w-4 h-4" />
+          Solicitar orçamento <ArrowRight className="w-5 h-5" />
         </Link>
         <a 
           href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-surface hover:bg-surface-border border border-surface-border text-white font-semibold flex items-center justify-center gap-2 transition-all"
+          className="w-full sm:w-auto px-10 py-4 rounded-xl glass hover:bg-surface border-surface-border text-white font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98]"
         >
-          <MessageCircle className="w-5 h-5 text-[#25D366]" /> Falar no WhatsApp
+          <MessageCircle className="w-6 h-6 text-[#25D366]" /> Falar no WhatsApp
         </a>
       </div>
     </section>
@@ -81,21 +83,22 @@ function ServicesSection() {
 
   return (
     <section id="servicos" className="px-6 max-w-7xl mx-auto w-full scroll-mt-24">
-      <div className="mb-12 text-center md:text-left">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que nós desenvolvemos</h2>
-        <p className="text-gray-400 text-lg max-w-2xl">
-          Nós simplificamos a tecnologia para que você possa focar no crescimento do seu negócio.
+      <div className="mb-16 text-center md:text-left">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">O que nós desenvolvemos</h2>
+        <p className="text-gray-400 text-lg md:text-xl max-w-3xl leading-relaxed">
+          Nós simplificamos a tecnologia complexa em ferramentas práticas que 
+          fazem sentido para a realidade do seu dia a dia.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((s, i) => (
-          <div key={i} className="bg-surface border border-surface-border p-8 rounded-2xl hover:border-primary/50 transition-colors group">
-            <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div key={i} className="glass p-10 rounded-3xl glass-hover group">
+            <div className="w-14 h-14 bg-background rounded-2xl flex items-center justify-center mb-8 border border-surface-border group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
               {s.icon}
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
-            <p className="text-gray-400 leading-relaxed">{s.desc}</p>
+            <h3 className="text-2xl font-bold text-white mb-4">{s.title}</h3>
+            <p className="text-gray-400 text-lg leading-relaxed">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -103,33 +106,41 @@ function ServicesSection() {
   );
 }
 
-function BenefitsSection() {
-  const benefits = [
-    "Menos tarefas manuais e mais tempo produtivo",
-    "Mais agilidade na entrega e atendimento",
-    "Organização centralizada das informações corporativas",
-    "Solução 100% adaptada ao fluxo do seu negócio",
-    "Mais eficiência operacional com menos custos diretos",
-    "Acompanhamento em tempo real de indicadores"
+function WhyChooseSection() {
+  const reasons = [
+    { title: "Foco total no ROI", desc: "Não criamos tecnologia por criar. Nossas soluções visam reduzir custos e aumentar faturamento." },
+    { title: "Sistemas 100% Suas", desc: "Diferente de sistemas mensais, você investe em uma ferramenta que é propriedade da sua empresa." },
+    { title: "Escalabilidade Real", desc: "Projetos construídos para crescer sem precisar recomeçar do zero a cada nova etapa." },
+    { title: "Suporte Especializado", desc: "Atendimento direto com quem desenvolveu, sem burocracia ou filas de tickets intermináveis." }
   ];
 
   return (
     <section className="px-6 max-w-7xl mx-auto w-full">
-      <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-3xl p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-[40px] p-10 md:p-20 relative overflow-hidden shadow-2xl">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
         
-        <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Por que investir em uma solução dedicada?</h2>
-          <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-            Sistemas de prateleira muitas vezes não se adaptam à forma como sua empresa realmente trabalha. Com uma solução sob medida, a tecnologia se molda a você, não o contrário.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-            {benefits.map((b, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-gray-300 font-medium text-sm md:text-base">{b}</span>
-              </div>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Por que confiar na <span className="text-primary italic">Fallback</span>?</h2>
+            <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
+              Enquanto o mercado oferece "sistemas de prateleira" que a sua empresa tem que se adaptar, 
+              nós moldamos a tecnologia para seguir os seus processos e a sua cultura de trabalho.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {reasons.map((r, i) => (
+                <div key={i} className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3 text-white font-bold text-lg">
+                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> {r.title}
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed">{r.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="hidden lg:flex justify-center relative">
+            <div className="w-full aspect-square max-w-[400px] glass rounded-full flex items-center justify-center p-12 border-2 border-primary/20 animate-pulse-slow shadow-[0_0_50px_-10px_rgba(79,70,229,0.3)]">
+              <Zap className="w-24 h-24 text-primary opacity-50" />
+            </div>
           </div>
         </div>
       </div>
@@ -139,26 +150,26 @@ function BenefitsSection() {
 
 function HowItWorksSection() {
   const steps = [
-    { num: "01", title: "Entendemos sua necessidade", desc: "Mapeamos os desafios da sua empresa em uma conversa direta." },
-    { num: "02", title: "Planejamos a solução", desc: "Em até 48h, enviamos uma proposta técnica detalhada com escopo e prazos." },
-    { num: "03", title: "Desenvolvemos o projeto", desc: "Criamos o sistema mantendo você atualizado em cada etapa do processo." },
-    { num: "04", title: "Ajustamos e entregamos", desc: "Implantamos a solução no seu negócio, testamos e oferecemos o suporte ideal." }
+    { num: "01", title: "Imersão", desc: "Mapeamos os desafios da sua empresa em uma conversa direta e sem jargões técnicos." },
+    { num: "02", title: "Projeto", desc: "Em até 48h, enviamos uma proposta técnica com escopo, prazos reais e investimento." },
+    { num: "03", title: "Execução", desc: "Desenvolvemos o sistema mantendo você atualizado em cada etapa do processo." },
+    { num: "04", title: "Entrega", desc: "Implantamos a solução, treinamos sua equipe e oferecemos o suporte contínuo." }
   ];
 
   return (
     <section id="como-funciona" className="px-6 max-w-7xl mx-auto w-full scroll-mt-24 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">Como funciona nosso trabalho</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-20 tracking-tight">Nosso processo <span className="text-primary italic">transparente</span></h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-        <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-surface-border -z-10 -translate-y-1/2" />
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+        <div className="hidden md:block absolute top-[40px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-surface-border to-transparent -z-10" />
         
         {steps.map((step, i) => (
-          <div key={i} className="flex flex-col items-center bg-background md:bg-transparent">
-            <div className="w-16 h-16 rounded-full bg-surface border-2 border-primary/30 flex items-center justify-center text-xl font-black text-white mb-6 shadow-lg shadow-primary/10">
+          <div key={i} className="flex flex-col items-center group">
+            <div className="w-20 h-20 rounded-2xl glass border-2 border-primary/20 flex items-center justify-center text-2xl font-black text-white mb-8 shadow-xl group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:-translate-y-2">
               {step.num}
             </div>
-            <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
-            <p className="text-gray-400 text-sm">{step.desc}</p>
+            <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">{step.desc}</p>
           </div>
         ))}
       </div>
@@ -177,27 +188,27 @@ function ExamplesSection() {
 
   return (
     <section className="px-6 max-w-7xl mx-auto w-full">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Exemplos práticos</h2>
-          <p className="text-gray-400 text-lg max-w-xl">
-            Alguns dos projetos que estruturamos para facilitar rotinas e potencializar empresas.
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Exemplos práticos</h2>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+            Soluções estruturadas para facilitar rotinas e potencializar empresas de diferentes tamanhos.
           </p>
         </div>
-        <Link href="/servicos" className="text-primary hover:text-primary-hover font-semibold flex items-center gap-2 group transition-colors">
-          Quero uma solução como essas <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        <Link href="/servicos" className="text-primary hover:text-primary-hover font-bold text-lg flex items-center gap-2 group transition-all glass px-6 py-3 rounded-xl border-primary/20">
+          Explorar Soluções <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {examples.map((ex, i) => (
-          <div key={i} className="p-6 rounded-xl bg-surface border border-surface-border hover:border-primary/30 transition-colors flex flex-col items-start gap-4">
-            <div className="px-3 py-1 bg-background text-xs font-semibold text-gray-300 rounded justify-center items-center flex">
+          <div key={i} className="p-8 rounded-3xl glass glass-hover flex flex-col items-start gap-6">
+            <div className="px-4 py-1.5 bg-primary/10 text-xs font-bold text-primary rounded-full border border-primary/20">
               {ex.tag}
             </div>
-            <div className="flex gap-4 items-start">
-              <div className="mt-1 text-primary">{ex.icon}</div>
-              <h4 className="font-bold text-white text-lg leading-tight">{ex.title}</h4>
+            <div className="flex gap-5 items-start">
+              <div className="mt-1 text-primary bg-primary/5 p-3 rounded-xl">{ex.icon}</div>
+              <h4 className="font-bold text-white text-xl leading-snug">{ex.title}</h4>
             </div>
           </div>
         ))}
@@ -258,28 +269,30 @@ function FaqSection() {
 function FinalCtaSection() {
   return (
     <section id="contato" className="px-6 max-w-7xl mx-auto w-full pb-20 scroll-mt-24">
-      <div className="bg-primary rounded-3xl p-8 md:p-16 text-center shadow-2xl shadow-primary/20 relative overflow-hidden">
+      <div className="bg-primary rounded-[40px] p-10 md:p-24 text-center shadow-2xl shadow-primary/40 relative overflow-hidden">
+        {/* Animated background flare */}
         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%)] bg-[length:400%_400%] animate-gradient pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 blur-[100px] rounded-full" />
         
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">
+        <h2 className="text-4xl md:text-6xl font-black text-white mb-8 relative z-10 leading-tight">
           Pronto para otimizar sua empresa?
         </h2>
-        <p className="text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10 text-white/80">
-          Fale com nossa equipe sem compromisso. Vamos entender o seu desafio e propor a melhor solução tecnológica para resolvê-lo.
+        <p className="text-white/80 text-lg md:text-2xl max-w-3xl mx-auto mb-12 relative z-10">
+          Fale com nossa equipe sem compromisso. Vamos mapear seus gargalos operacionais e propor a solução exata para resolvê-los.
         </p>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-5 relative z-10">
           <a
             href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold flex items-center justify-center gap-2 hover:bg-[#20bd5a] transition-all shadow-lg hover:shadow-[0_0_25px_-5px_#25D366]"
+            className="px-10 py-5 rounded-2xl bg-[#25D366] text-white font-black text-xl flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-all shadow-xl hover:shadow-[0_0_30px_-5px_#25D366] hover:scale-105"
           >
-            <MessageCircle className="w-5 h-5" /> Iniciar conversa no WhatsApp
+            <MessageCircle className="w-6 h-6" /> Iniciar conversa no WhatsApp
           </a>
           <a
             href={`mailto:${COMPANY_EMAIL}`}
-            className="px-8 py-4 rounded-xl bg-surface text-white font-bold flex items-center justify-center gap-2 hover:bg-surface-border transition-all border border-white/10"
+            className="px-10 py-5 rounded-2xl glass text-white font-bold text-xl flex items-center justify-center gap-3 hover:bg-white/10 transition-all border-white/20 hover:scale-105"
           >
             Enviar um E-mail
           </a>

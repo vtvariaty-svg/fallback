@@ -1,89 +1,106 @@
-import { getWhatsAppUrl, COMPANY_EMAIL, COMPANY_PHONE_DISPLAY, COMPANY_LEGAL_NAME, COMPANY_CNPJ } from "@/lib/constants";
-import { MessageCircle, Mail, MapPin, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, ShieldCheck, Clock, MapPin } from "lucide-react";
+import { getWhatsAppUrl, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_LEGAL_NAME, COMPANY_CNPJ } from "@/lib/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fale Conosco | Fallback Automações",
-  description: "Entre em contato com nossa equipe para discutir a automação ideal para sua empresa.",
+  title: "Contato | Fallback Automações",
+  description: "Entre em contato com nossa equipe de especialistas. Estamos prontos para entender seu desafio e propor a melhor solução em automação e sistemas.",
 };
 
 export default function ContatoPage() {
   return (
-    <div className="flex flex-col gap-16 md:gap-24 w-full pt-32 pb-24">
+    <div className="flex flex-col gap-20 md:gap-32 w-full pt-32 pb-24 bg-grid">
       
-      {/* Intro Section */}
-      <section className="px-6 max-w-4xl mx-auto w-full text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
-          Vamos transformar as <span className="text-primary">ideias em sistema</span>
+      {/* Hero Section */}
+      <section className="px-6 max-w-7xl mx-auto w-full text-center">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white mb-8">
+          Vamos Conversar <span className="text-gradient">Sério</span>
         </h1>
-        <p className="text-gray-400 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
-          Você não precisa entender de tecnologia para ter a melhor solução na sua empresa. 
-          Entre em contato e nossa equipe fará uma avaliação sincera de como podemos otimizar seus processos.
+        <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed">
+          Toda grande transformação digital começa com uma conversa direta. 
+          Escolha o canal de sua preferência e fale com quem realmente entende de automação.
         </p>
       </section>
 
-      {/* Main Contact Area */}
-      <section className="px-6 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <section className="px-6 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Contact Info blocks */}
-        <div className="flex flex-col gap-8">
-          <div className="bg-surface border border-surface-border rounded-2xl p-8 hover:border-primary/50 transition-colors shadow-lg shadow-black/20">
-            <h2 className="text-2xl font-bold text-white mb-6">Fale pelo WhatsApp</h2>
-            <p className="text-gray-400 mb-8">
-              A forma mais rápida de falar conosco. Mande uma mensagem e vamos conversar sobre seus desafios operacionais gratuitamente.
-            </p>
-            <a 
-              href={getWhatsAppUrl("Olá! Acessei a página de contato e gostaria de agendar uma conversa com um especialista.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 px-6 rounded-xl transition-all shadow-[0_0_20px_-5px_#25D366]"
-            >
-              <MessageCircle className="w-5 h-5" /> Iniciar conversa no WhatsApp
-            </a>
-            <div className="mt-4 text-center text-sm font-medium text-gray-500">
-              Nosso número: {COMPANY_PHONE_DISPLAY}
+        {/* Contact Cards */}
+        <div className="lg:col-span-7 flex flex-col gap-6">
+          <div className="glass p-8 md:p-12 rounded-[40px] glass-hover flex flex-col md:flex-row gap-8 items-center border-2 border-primary/20 bg-primary/5">
+            <div className="w-20 h-20 bg-[#25D366] rounded-3xl flex items-center justify-center shrink-0 shadow-[0_10px_30px_-10px_#25D366]">
+              <MessageCircle className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl font-bold text-white mb-2">WhatsApp Business</h2>
+              <p className="text-gray-400 text-lg mb-6">Resposta rápida para orçamentos e dúvidas técnicas.</p>
+              <a 
+                href={getWhatsAppUrl("Olá, vi o site e gostaria de um orçamento para um projeto de automação.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black rounded-xl transition-all hover:scale-105 shadow-xl"
+              >
+                Iniciar Conversa Agora
+              </a>
             </div>
           </div>
 
-          <div className="bg-surface border border-surface-border rounded-2xl p-8 shadow-lg shadow-black/20">
-            <h3 className="text-xl font-bold text-white mb-6">Outros Canais</h3>
-            
-            <a href={`mailto:${COMPANY_EMAIL}`} className="flex items-center gap-4 mb-6 group cursor-pointer group hover:bg-white/5 p-4 rounded-xl transition-colors">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div className="flex-1">
-                <div className="text-sm font-medium text-gray-400 mb-1">E-mail corporativo</div>
-                <div className="text-white font-semibold flex items-center gap-2">
-                  {COMPANY_EMAIL} <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            </a>
+          <div className="glass p-8 md:p-12 rounded-[40px] glass-hover flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-20 h-20 bg-surface rounded-3xl border border-surface-border flex items-center justify-center shrink-0">
+              <Mail className="w-10 h-10 text-primary" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl font-bold text-white mb-2">E-mail Corporativo</h2>
+              <p className="text-gray-400 text-lg mb-6">Para propostas formais e parcerias estratégicas.</p>
+              <a 
+                href={`mailto:${COMPANY_EMAIL}`}
+                className="text-2xl font-black text-white hover:text-primary transition-colors break-all"
+              >
+                {COMPANY_EMAIL}
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Company Info Box */}
-        <div className="bg-background flex flex-col pt-4 md:pl-8">
-          <div className="border-l-4 border-primary pl-6 py-2 mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Transparência e Segurança</h3>
-            <p className="text-gray-400">
-              Operamos com seriedade. Todos os nossos projetos possuem contrato, escopo fechado e nota fiscal.
-            </p>
-          </div>
-
-          <div className="space-y-6 text-gray-300">
+        {/* Info Sidebar */}
+        <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="glass p-8 rounded-[40px] flex flex-col gap-8 border-primary/10 bg-surface/30">
+            <h3 className="text-2xl font-bold text-white mb-2">Por que entrar em contato?</h3>
+            
             <div className="flex gap-4">
-              <MapPin className="w-6 h-6 text-primary shrink-0" />
+              <ShieldCheck className="w-8 h-8 text-primary shrink-0" />
               <div>
-                <strong className="block text-white mb-1">Dados Jurídicos</strong>
-                <span className="block text-sm text-gray-400">{COMPANY_LEGAL_NAME}</span>
-                <span className="block text-sm text-gray-400">CNPJ: {COMPANY_CNPJ}</span>
+                <h4 className="text-white font-bold text-lg mb-1">Diagnóstico Gratuito</h4>
+                <p className="text-gray-400 text-sm">Analisamos seu processo atual sem custo de consultoria inicial.</p>
               </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Clock className="w-8 h-8 text-primary shrink-0" />
+              <div>
+                <h4 className="text-white font-bold text-lg mb-1">Retorno em 24h</h4>
+                <p className="text-gray-400 text-sm">Garantimos um retorno técnico sobre a viabilidade do seu projeto.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <MapPin className="w-8 h-8 text-primary shrink-0" />
+              <div>
+                <h4 className="text-white font-bold text-lg mb-1">Atendimento Remoto</h4>
+                <p className="text-gray-400 text-sm">Atendemos empresas em todo o Brasil com total segurança digital.</p>
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-surface-border mt-4">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 block">Dados Legais</span>
+              <p className="text-white font-bold text-sm leading-relaxed">{COMPANY_LEGAL_NAME}</p>
+              <p className="text-gray-400 text-sm">CNPJ: {COMPANY_CNPJ}</p>
+              <p className="text-gray-400 text-sm mt-2">{COMPANY_PHONE}</p>
             </div>
           </div>
         </div>
 
       </section>
+
     </div>
   );
 }
