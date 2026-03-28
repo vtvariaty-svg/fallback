@@ -8,8 +8,19 @@ import FloatingWhatsApp from "@/components/whatsapp/FloatingWhatsApp";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Fallback Automações | Soluções em Automação",
-  description: "Automações e sistemas personalizados para empresas.",
+  title: "Fallback Automações | Soluções Digitais e Sistemas Personalizados",
+  description: "Transformamos processos manuais da sua empresa em eficiência digital. Especialistas em automações no WhatsApp, sistemas sob medida e integração de ferramentas.",
+  openGraph: {
+    title: "Fallback Automações",
+    description: "Sistemas sob medida e automações empresariais. Ganhe tempo e dinheiro com a tecnologia certa.",
+    locale: "pt_BR",
+    type: "website",
+    siteName: "Fallback Automações",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({

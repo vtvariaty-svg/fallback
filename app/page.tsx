@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2, MonitorSmartphone, Settings, Zap, ArrowUpRight, BarChart3, Database, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { getWhatsAppUrl, COMPANY_EMAIL } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -36,13 +37,13 @@ function HeroSection() {
 
       <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
         <Link 
-          href="#contato"
+          href="/contato"
           className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-semibold flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_-5px_rgba(79,70,229,0.4)]"
         >
           Solicitar orçamento <ArrowRight className="w-4 h-4" />
         </Link>
         <a 
-          href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Fallback%20Automa%C3%A7%C3%B5es%20e%20quero%20entender%20melhor%20uma%20solu%C3%A7%C3%A3o%20personalizada%20para%20minha%20empresa."
+          href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-surface hover:bg-surface-border border border-surface-border text-white font-semibold flex items-center justify-center gap-2 transition-all"
@@ -183,7 +184,7 @@ function ExamplesSection() {
             Alguns dos projetos que estruturamos para facilitar rotinas e potencializar empresas.
           </p>
         </div>
-        <Link href="#contato" className="text-primary hover:text-primary-hover font-semibold flex items-center gap-2 group transition-colors">
+        <Link href="/servicos" className="text-primary hover:text-primary-hover font-semibold flex items-center gap-2 group transition-colors">
           Quero uma solução como essas <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </Link>
       </div>
@@ -269,7 +270,7 @@ function FinalCtaSection() {
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
           <a
-            href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Fallback%20Automa%C3%A7%C3%B5es%20e%20quero%20entender%20melhor%20uma%20solu%C3%A7%C3%A3o%20personalizada%20para%20minha%20empresa."
+            href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold flex items-center justify-center gap-2 hover:bg-[#20bd5a] transition-all shadow-lg hover:shadow-[0_0_25px_-5px_#25D366]"
@@ -277,7 +278,7 @@ function FinalCtaSection() {
             <MessageCircle className="w-5 h-5" /> Iniciar conversa no WhatsApp
           </a>
           <a
-            href="mailto:contato@fallbackautomacoes.com.br"
+            href={`mailto:${COMPANY_EMAIL}`}
             className="px-8 py-4 rounded-xl bg-surface text-white font-bold flex items-center justify-center gap-2 hover:bg-surface-border transition-all border border-white/10"
           >
             Enviar um E-mail

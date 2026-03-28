@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { COMPANY_EMAIL, COMPANY_PHONE_DISPLAY, COMPANY_LEGAL_NAME, COMPANY_CNPJ, getWhatsAppUrl } from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -19,21 +20,24 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Soluções</h4>
             <ul className="space-y-3">
-              <li><Link href="#servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Automações personalizadas</Link></li>
-              <li><Link href="#servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Sistemas sob medida</Link></li>
-              <li><Link href="#servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Integrações de plataformas</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Automações personalizadas</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Sistemas sob medida</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Integrações de plataformas</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-white mb-4">Contato</h4>
             <ul className="space-y-3">
-              <li><span className="text-sm text-gray-400">contato@fallbackautomacoes.com.br</span></li>
-              <li><span className="text-sm text-gray-400">+55 (11) 99999-9999</span></li>
+              <li><a href={`mailto:${COMPANY_EMAIL}`} className="text-sm text-gray-400 hover:text-white transition-colors">{COMPANY_EMAIL}</a></li>
+              <li><a href={getWhatsAppUrl("Olá!")} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">{COMPANY_PHONE_DISPLAY}</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-surface-border overflow-hidden pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Fallback Automações. Todos os direitos reservados.</p>
+        <div className="border-t border-surface-border overflow-hidden pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <span className="font-medium text-gray-400">{COMPANY_LEGAL_NAME} — CNPJ {COMPANY_CNPJ}</span>
+            <span>&copy; {new Date().getFullYear()} Fallback Automações. Todos os direitos reservados.</span>
+          </div>
         </div>
       </div>
     </footer>

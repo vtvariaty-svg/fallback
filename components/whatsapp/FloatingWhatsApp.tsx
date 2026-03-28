@@ -1,9 +1,8 @@
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 export default function FloatingWhatsApp() {
-  const phoneNumber = "5511999999999";
-  const message = "Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.";
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const url = getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.");
 
   return (
     <a

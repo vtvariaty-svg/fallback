@@ -11,18 +11,21 @@ export default function Header() {
           <span>Fallback <span className="text-primary font-medium">Automações</span></span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#servicos" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-            Serviços
+          <Link href="/servicos" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            Nossos Serviços
           </Link>
-          <Link href="#como-funciona" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          <Link href="/#como-funciona" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
             Como Funciona
           </Link>
-          <Link href="#faq" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          <Link href="/#faq" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
             FAQ
+          </Link>
+          <Link href="/contato" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            Contato
           </Link>
         </nav>
         <Link
-          href="#contato"
+          href="/contato"
           className="bg-primary hover:bg-primary-hover text-white text-sm font-semibold py-2.5 px-6 rounded-lg transition-colors ring-1 ring-primary/50 shadow-[0_0_15px_-3px_rgba(79,70,229,0.3)]"
         >
           Falar com especialista
