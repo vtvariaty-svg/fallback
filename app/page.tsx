@@ -10,6 +10,7 @@ export default function Home() {
       <WhyChooseSection />
       <HowItWorksSection />
       <ExamplesSection />
+      <IdealForSection />
       <FaqSection />
       <FinalCtaSection />
     </div>
@@ -19,10 +20,9 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="relative px-6 pt-20 pb-16 md:pt-40 md:pb-32 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-grid pointer-events-none -z-10 opacity-60" />
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[130px] rounded-full pointer-events-none -z-10" />
-      
+
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold text-gray-300 mb-10 animate-fade-in shadow-xl">
         <span className="flex w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
         Automação e sistemas operacionais para clínicas
@@ -203,10 +203,10 @@ function HowItWorksSection() {
   return (
     <section id="como-funciona" className="px-6 max-w-7xl mx-auto w-full scroll-mt-24 text-center">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-20 tracking-tight">Uma implantação <span className="text-primary italic">sem travar</span> sua clínica</h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
         <div className="hidden md:block absolute top-[40px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-surface-border to-transparent -z-10" />
-        
+
         {steps.map((step, i) => (
           <div key={i} className="flex flex-col items-center group">
             <div className="w-20 h-20 rounded-2xl glass border-2 border-primary/20 flex items-center justify-center text-2xl font-black text-white mb-8 shadow-xl group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:-translate-y-2">
@@ -262,6 +262,48 @@ function ExamplesSection() {
   );
 }
 
+function IdealForSection() {
+  const criteria = [
+    "Clínicas com agenda cheia mas alto índice de faltas",
+    "Consultórios que confirmam consultas por ligação ou WhatsApp manual",
+    "Equipes que gastam tempo triando mensagens em vez de atender",
+    "Gestores sem visibilidade do fluxo operacional em tempo real",
+    "Clínicas com pacientes inativos sem nenhum processo de reativação",
+    "Clínicas que já tentaram ferramentas genéricas e não se adaptaram",
+  ];
+
+  return (
+    <section className="px-6 max-w-7xl mx-auto w-full">
+      <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-[40px] p-10 md:p-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              Para quais clínicas isso faz sentido?
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              A solução é especialmente valiosa para clínicas que já têm fluxo de atendimento, mas dependem de processo manual para mantê-lo funcionando. Se a sua operação pausa quando a recepção está sobrecarregada, chegou a hora de estruturá-la.
+            </p>
+            <Link
+              href="/contato"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]"
+            >
+              Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            {criteria.map((item, i) => (
+              <div key={i} className="flex items-start gap-4 glass px-6 py-4 rounded-2xl">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-gray-300 font-medium leading-snug">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FaqSection() {
   const faqs = [
     {
@@ -299,7 +341,7 @@ function FaqSection() {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Dúvidas frequentes</h2>
       </div>
-      
+
       <div className="flex flex-col gap-4">
         {faqs.map((faq, i) => (
           <details key={i} className="group bg-surface border border-surface-border rounded-xl px-6 py-5 cursor-pointer hover:border-primary/50 transition-colors">
@@ -323,10 +365,9 @@ function FinalCtaSection() {
   return (
     <section id="contato" className="px-6 max-w-7xl mx-auto w-full pb-20 scroll-mt-24">
       <div className="bg-primary rounded-[40px] p-10 md:p-24 text-center shadow-2xl shadow-primary/40 relative overflow-hidden">
-        {/* Animated background flare */}
         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%)] bg-[length:400%_400%] animate-gradient pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 blur-[100px] rounded-full" />
-        
+
         <h2 className="text-4xl md:text-6xl font-black text-white mb-8 relative z-10 leading-tight">
           Pronto para organizar a operação da sua clínica?
         </h2>
@@ -350,6 +391,9 @@ function FinalCtaSection() {
             <MessageCircle className="w-6 h-6" /> Falar no WhatsApp
           </a>
         </div>
+        <p className="text-white/50 text-sm mt-8 relative z-10">
+          Sem compromisso. Em até 24h você recebe um diagnóstico da operação da sua clínica.
+        </p>
       </div>
     </section>
   );

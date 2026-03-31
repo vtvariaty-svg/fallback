@@ -12,7 +12,7 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           <Link href="/servicos" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-            Nossos Serviços
+            Soluções
           </Link>
           <Link href="/#como-funciona" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
             Como Funciona

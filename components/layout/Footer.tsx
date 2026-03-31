@@ -29,7 +29,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Contato</h4>
             <ul className="space-y-3">
               <li><a href={`mailto:${COMPANY_EMAIL}`} className="text-sm text-gray-400 hover:text-white transition-colors">{COMPANY_EMAIL}</a></li>
-              <li><a href={getWhatsAppUrl("Olá!")} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">{COMPANY_PHONE_DISPLAY}</a></li>
+              <li><a href={getWhatsAppUrl("Olá, gostaria de saber mais sobre automação e sistemas para a minha clínica.")} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">{COMPANY_PHONE_DISPLAY}</a></li>
             </ul>
           </div>
         </div>

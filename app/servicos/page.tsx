@@ -22,13 +22,19 @@ export default function ServicosPage() {
           Estruturamos o atendimento, o controle operacional e os fluxos de comunicação da sua clínica — para que a equipe pare de apagar incêndios e comece a trabalhar com processo.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-5">
+          <Link
+            href="/contato"
+            className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl hover:scale-105"
+          >
+            Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
+          </Link>
           <a
             href={getWhatsAppUrl("Olá, quero saber mais sobre automação e sistemas para a minha clínica.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl hover:scale-105"
+            className="w-full sm:w-auto px-10 py-4 rounded-xl glass hover:bg-surface border-surface-border text-white font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02]"
           >
-            Falar com especialista <ArrowRight className="w-5 h-5" />
+            <MessageCircle className="w-6 h-6 text-[#25D366]" /> Falar no WhatsApp
           </a>
         </div>
       </section>
@@ -46,11 +52,16 @@ export default function ServicosPage() {
             <p className="text-gray-400 text-xl leading-relaxed mb-8">
               Reduzimos o volume de trabalho manual da recepção. Confirmações, lembretes, triagem e reativação de pacientes passam a funcionar de forma automática — sem depender de cada mensagem enviada à mão.
             </p>
-            <ul className="flex flex-col gap-4 mb-10">
+            <ul className="flex flex-col gap-4 mb-8">
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Confirmações e lembretes automáticos de consultas</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Atendimento inicial e triagem via WhatsApp</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Reativação estruturada de pacientes inativos</li>
             </ul>
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl px-6 py-4 mb-8">
+              <p className="text-primary font-semibold text-sm leading-relaxed">
+                O que muda na rotina: a recepção para de ligar um por um para confirmar. As faltas caem. O WhatsApp fica organizado e respondido mesmo fora do horário de expediente.
+              </p>
+            </div>
             <a
               href={getWhatsAppUrl("Quero automatizar o atendimento da minha clínica.")}
               target="_blank"
@@ -72,11 +83,16 @@ export default function ServicosPage() {
             <p className="text-gray-400 text-xl leading-relaxed mb-8">
               Desenvolvemos painéis e ferramentas internas construídas em torno do fluxo real da clínica. Nada de sistemas genéricos que a equipe precisa se adaptar — a ferramenta serve ao seu processo.
             </p>
-            <ul className="flex flex-col gap-4 mb-10">
+            <ul className="flex flex-col gap-4 mb-8">
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Painel operacional interno para gestores</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Controle de agenda, pacientes e follow-ups</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Interface simples para a equipe de recepção</li>
             </ul>
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl px-6 py-4 mb-8">
+              <p className="text-primary font-semibold text-sm leading-relaxed">
+                O que muda na rotina: o gestor tem visão do fluxo em tempo real. A equipe encontra a informação que precisa num só lugar, sem recorrer a planilhas ou conversas no WhatsApp.
+              </p>
+            </div>
             <a
               href={getWhatsAppUrl("Quero um sistema interno para a minha clínica.")}
               target="_blank"
@@ -98,11 +114,16 @@ export default function ServicosPage() {
             <p className="text-gray-400 text-xl leading-relaxed mb-8">
               Conectamos o que a clínica já usa — agenda, prontuário, WhatsApp Business, planilhas — para que as informações fluam sem retrabalho e sem dados duplicados.
             </p>
-            <ul className="flex flex-col gap-4 mb-10">
+            <ul className="flex flex-col gap-4 mb-8">
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Integração com agenda e prontuário eletrônico</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Sincronização entre WhatsApp, planilhas e sistemas internos</li>
               <li className="flex items-center gap-3 text-gray-300 font-medium text-lg"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Eliminação de redigitação e dados duplicados</li>
             </ul>
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl px-6 py-4 mb-8">
+              <p className="text-primary font-semibold text-sm leading-relaxed">
+                O que muda na rotina: os dados fluem entre agenda, prontuário e WhatsApp sem retrabalho. Nenhuma informação se perde entre ferramentas e a equipe não precisa redigitar nada.
+              </p>
+            </div>
             <a
               href={getWhatsAppUrl("Quero integrar as ferramentas da minha clínica.")}
               target="_blank"
@@ -114,6 +135,45 @@ export default function ServicosPage() {
           </div>
         </div>
 
+      </section>
+
+      {/* Etapas Strip */}
+      <section className="px-6 max-w-5xl mx-auto w-full">
+        <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-[40px] p-10 md:p-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Você não precisa mudar tudo de uma vez</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              A implantação acontece por etapas, com a clínica operando normalmente. Cada entrega é validada antes da próxima começar.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                num: "01",
+                title: "Diagnóstico",
+                desc: "Mapeamos os gargalos da sua operação e definimos a primeira entrega de maior impacto."
+              },
+              {
+                num: "02",
+                title: "Primeira entrega",
+                desc: "Implementamos a solução prioritária. A equipe é treinada e valida antes de ir ao ar."
+              },
+              {
+                num: "03",
+                title: "Evolução contínua",
+                desc: "Novas etapas são adicionadas conforme a clínica avança, sem pressa e sem ruptura."
+              }
+            ].map((step, i) => (
+              <div key={i} className="flex flex-col items-center text-center group">
+                <div className="w-16 h-16 rounded-2xl glass border-2 border-primary/20 flex items-center justify-center text-xl font-black text-white mb-6 shadow-xl group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                  {step.num}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-[220px]">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Final CTA Block */}
@@ -139,6 +199,9 @@ export default function ServicosPage() {
               <MessageCircle className="w-7 h-7" /> Falar no WhatsApp
             </a>
           </div>
+          <p className="text-white/50 text-sm mt-8 relative z-10">
+            Sem compromisso. Em até 24h você recebe um plano de implantação personalizado para a sua clínica.
+          </p>
         </div>
       </section>
 
