@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2, XCircle, MessageCircle } from "lucide-react";
-import Link from "next/link";
-import { getWhatsAppUrl } from "@/lib/constants";
+import { DiagnosticLink, WhatsAppLink } from "@/components/tracking/TrackedCTAs";
+import PixelEventTracker from "@/components/analytics/PixelEventTracker";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,8 +23,7 @@ export const metadata: Metadata = {
 function SectionCTAs({ inverted = false }: { inverted?: boolean }) {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-      <Link
-        href="/contato"
+      <DiagnosticLink
         className={`w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98] ${
           inverted
             ? "bg-white text-primary hover:bg-white/90 shadow-xl"
@@ -32,13 +31,9 @@ function SectionCTAs({ inverted = false }: { inverted?: boolean }) {
         }`}
       >
         Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
-      </Link>
-      <a
-        href={getWhatsAppUrl(
-          "Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
-        )}
-        target="_blank"
-        rel="noopener noreferrer"
+      </DiagnosticLink>
+      <WhatsAppLink
+        message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
         className={`w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98] ${
           inverted
             ? "glass border-white/20 text-white hover:bg-white/10"
@@ -46,7 +41,7 @@ function SectionCTAs({ inverted = false }: { inverted?: boolean }) {
         }`}
       >
         <MessageCircle className="w-6 h-6 text-[#25D366]" /> Falar no WhatsApp
-      </a>
+      </WhatsAppLink>
     </div>
   );
 }
@@ -191,6 +186,8 @@ export default function ClinicasLPPage() {
   return (
     <div className="flex flex-col gap-16 md:gap-24 w-full pt-20 pb-20">
 
+      <PixelEventTracker event="ViewContent" params={{ content_name: "LP Clínicas", content_category: "Landing Page" }} />
+
       {/* ── 1. HERO ──────────────────────────────────────────────────────── */}
       <section className="relative px-6 pt-16 pb-12 md:pt-32 md:pb-24 max-w-7xl mx-auto w-full flex flex-col items-center text-center overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-grid pointer-events-none -z-10 opacity-60" />
@@ -285,12 +282,9 @@ export default function ClinicasLPPage() {
           </div>
 
           <div className="flex justify-center">
-            <Link
-              href="/contato"
-              className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]"
-            >
+            <DiagnosticLink className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]">
               Quero estruturar minha clínica <ArrowRight className="w-5 h-5" />
-            </Link>
+            </DiagnosticLink>
           </div>
         </div>
       </section>
@@ -352,12 +346,9 @@ export default function ClinicasLPPage() {
           ))}
         </div>
 
-        <Link
-          href="/contato"
-          className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]"
-        >
+        <DiagnosticLink className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]">
           Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
-        </Link>
+        </DiagnosticLink>
       </section>
 
       {/* ── 6. PARA QUEM É IDEAL ─────────────────────────────────────────── */}

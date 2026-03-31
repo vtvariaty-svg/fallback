@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2, MonitorSmartphone, Settings, Zap, ArrowUpRight, BarChart3, Database, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { getWhatsAppUrl, COMPANY_EMAIL } from "@/lib/constants";
+import { DiagnosticLink, WhatsAppLink } from "@/components/tracking/TrackedCTAs";
 
 export default function Home() {
   return (
@@ -38,20 +38,15 @@ function HeroSection() {
       </p>
 
       <div className="flex flex-col sm:flex-row items-center gap-5 w-full justify-center">
-        <Link
-          href="/contato"
-          className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02] active:scale-[0.98]"
-        >
+        <DiagnosticLink className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02] active:scale-[0.98]">
           Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
-        </Link>
-        <a
-          href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
-          target="_blank"
-          rel="noopener noreferrer"
+        </DiagnosticLink>
+        <WhatsAppLink
+          message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
           className="w-full sm:w-auto px-10 py-4 rounded-xl glass hover:bg-surface border-surface-border text-white font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98]"
         >
           <MessageCircle className="w-6 h-6 text-[#25D366]" /> Falar no WhatsApp
-        </a>
+        </WhatsAppLink>
       </div>
     </section>
   );
@@ -283,12 +278,9 @@ function IdealForSection() {
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
               A solução é especialmente valiosa para clínicas que já têm fluxo de atendimento, mas dependem de processo manual para mantê-lo funcionando. Se a sua operação pausa quando a recepção está sobrecarregada, chegou a hora de estruturá-la.
             </p>
-            <Link
-              href="/contato"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]"
-            >
+            <DiagnosticLink className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02]">
               Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
-            </Link>
+            </DiagnosticLink>
           </div>
           <div className="grid grid-cols-1 gap-4">
             {criteria.map((item, i) => (
@@ -376,20 +368,15 @@ function FinalCtaSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-5 relative z-10">
-          <Link
-            href="/contato"
-            className="px-10 py-5 rounded-2xl bg-white text-primary font-black text-xl flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-xl hover:scale-105"
-          >
+          <DiagnosticLink className="px-10 py-5 rounded-2xl bg-white text-primary font-black text-xl flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-xl hover:scale-105">
             Solicitar diagnóstico <ArrowRight className="w-6 h-6" />
-          </Link>
-          <a
-            href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
-            target="_blank"
-            rel="noopener noreferrer"
+          </DiagnosticLink>
+          <WhatsAppLink
+            message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
             className="px-10 py-5 rounded-2xl bg-[#25D366] text-white font-black text-xl flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-all shadow-xl hover:shadow-[0_0_30px_-5px_#25D366] hover:scale-105"
           >
             <MessageCircle className="w-6 h-6" /> Falar no WhatsApp
-          </a>
+          </WhatsAppLink>
         </div>
         <p className="text-white/50 text-sm mt-8 relative z-10">
           Sem compromisso. Em até 24h você recebe um diagnóstico da operação da sua clínica.

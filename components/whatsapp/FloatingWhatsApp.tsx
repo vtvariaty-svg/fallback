@@ -1,5 +1,8 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/constants";
+import { trackEvent } from "@/lib/pixel";
 
 export default function FloatingWhatsApp() {
   const url = getWhatsAppUrl(
@@ -11,6 +14,7 @@ export default function FloatingWhatsApp() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackEvent("Lead", { content_name: "WhatsApp Flutuante" })}
       className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-50 flex items-center justify-center group"
       aria-label="Fale conosco no WhatsApp"
     >

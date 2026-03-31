@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/whatsapp/FloatingWhatsApp";
+import MetaPixelScript from "@/components/analytics/MetaPixelScript";
+import PageViewTracker from "@/components/analytics/PageViewTracker";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -53,6 +55,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.variable} font-sans flex flex-col min-h-screen`}>
+        <MetaPixelScript />
+        <PageViewTracker />
         <Header />
         <main className="flex-1">
           {children}

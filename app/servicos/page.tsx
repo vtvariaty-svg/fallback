@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle2, MonitorSmartphone, Settings, Zap, MessageCircle } from "lucide-react";
-import Link from "next/link";
-import { getWhatsAppUrl } from "@/lib/constants";
+import { DiagnosticLink, WhatsAppLink } from "@/components/tracking/TrackedCTAs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,20 +21,15 @@ export default function ServicosPage() {
           Estruturamos o atendimento, o controle operacional e os fluxos de comunicação da sua clínica — para que a equipe pare de apagar incêndios e comece a trabalhar com processo.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-5">
-          <Link
-            href="/contato"
-            className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl hover:scale-105"
-          >
+          <DiagnosticLink className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl hover:scale-105">
             Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
-          </Link>
-          <a
-            href={getWhatsAppUrl("Olá, quero saber mais sobre automação e sistemas para a minha clínica.")}
-            target="_blank"
-            rel="noopener noreferrer"
+          </DiagnosticLink>
+          <WhatsAppLink
+            message="Olá, quero saber mais sobre automação e sistemas para a minha clínica."
             className="w-full sm:w-auto px-10 py-4 rounded-xl glass hover:bg-surface border-surface-border text-white font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02]"
           >
             <MessageCircle className="w-6 h-6 text-[#25D366]" /> Falar no WhatsApp
-          </a>
+          </WhatsAppLink>
         </div>
       </section>
 
@@ -62,14 +56,12 @@ export default function ServicosPage() {
                 O que muda na rotina: a recepção para de ligar um por um para confirmar. As faltas caem. O WhatsApp fica organizado e respondido mesmo fora do horário de expediente.
               </p>
             </div>
-            <a
-              href={getWhatsAppUrl("Quero automatizar o atendimento da minha clínica.")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message="Quero automatizar o atendimento da minha clínica."
               className="inline-flex items-center text-primary font-black text-lg hover:text-primary-hover group/link"
             >
               Falar sobre automações <ArrowRight className="w-5 h-5 ml-2 group-hover/link:translate-x-2 transition-transform" />
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -93,14 +85,12 @@ export default function ServicosPage() {
                 O que muda na rotina: o gestor tem visão do fluxo em tempo real. A equipe encontra a informação que precisa num só lugar, sem recorrer a planilhas ou conversas no WhatsApp.
               </p>
             </div>
-            <a
-              href={getWhatsAppUrl("Quero um sistema interno para a minha clínica.")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message="Quero um sistema interno para a minha clínica."
               className="inline-flex items-center text-primary font-black text-lg hover:text-primary-hover group/link"
             >
               Conversar sobre um painel <ArrowRight className="w-5 h-5 ml-2 group-hover/link:translate-x-2 transition-transform" />
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -124,14 +114,12 @@ export default function ServicosPage() {
                 O que muda na rotina: os dados fluem entre agenda, prontuário e WhatsApp sem retrabalho. Nenhuma informação se perde entre ferramentas e a equipe não precisa redigitar nada.
               </p>
             </div>
-            <a
-              href={getWhatsAppUrl("Quero integrar as ferramentas da minha clínica.")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message="Quero integrar as ferramentas da minha clínica."
               className="inline-flex items-center text-primary font-black text-lg hover:text-primary-hover group/link"
             >
               Mapear minhas integrações <ArrowRight className="w-5 h-5 ml-2 group-hover/link:translate-x-2 transition-transform" />
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -184,20 +172,15 @@ export default function ServicosPage() {
             Sua clínica pode operar com mais controle e menos esforço manual
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-5 relative z-10">
-            <Link
-              href="/contato"
-              className="px-10 py-5 rounded-2xl bg-white text-primary font-black text-xl flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-xl hover:scale-105"
-            >
+            <DiagnosticLink className="px-10 py-5 rounded-2xl bg-white text-primary font-black text-xl flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-xl hover:scale-105">
               Solicitar diagnóstico <ArrowRight className="w-6 h-6" />
-            </Link>
-            <a
-              href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
-              target="_blank"
-              rel="noopener noreferrer"
+            </DiagnosticLink>
+            <WhatsAppLink
+              message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
               className="px-10 py-5 rounded-2xl bg-[#25D366] text-white font-black text-xl flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-all shadow-xl hover:shadow-[0_0_30px_-5px_#25D366] hover:scale-105"
             >
               <MessageCircle className="w-7 h-7" /> Falar no WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
           <p className="text-white/50 text-sm mt-8 relative z-10">
             Sem compromisso. Em até 24h você recebe um plano de implantação personalizado para a sua clínica.

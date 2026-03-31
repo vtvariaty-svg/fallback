@@ -1,5 +1,6 @@
 import { MessageCircle, Mail, CheckCircle2, ArrowRight, MapPin } from "lucide-react";
-import { getWhatsAppUrl, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_LEGAL_NAME, COMPANY_CNPJ } from "@/lib/constants";
+import { COMPANY_EMAIL, COMPANY_PHONE, COMPANY_LEGAL_NAME, COMPANY_CNPJ } from "@/lib/constants";
+import { WhatsAppLink } from "@/components/tracking/TrackedCTAs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -64,14 +65,12 @@ export default function ContatoPage() {
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 Antes de qualquer proposta, entendemos como a sua clínica funciona hoje — onde estão os gargalos reais, quais ferramentas já existem e qual entrega vai gerar impacto mais rápido.
               </p>
-              <a
-                href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-lg transition-all shadow-xl hover:scale-105"
               >
                 <MessageCircle className="w-5 h-5" /> Iniciar pelo WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
             <div className="flex flex-col gap-3">
               {diagnosticItems.map((item, i) => (
@@ -97,14 +96,12 @@ export default function ContatoPage() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl font-bold text-white mb-2">WhatsApp Business</h2>
               <p className="text-gray-400 text-lg mb-6">Resposta rápida. Canal preferido para diagnóstico e primeiras conversas sobre a operação da clínica.</p>
-              <a
-                href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                message="Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
                 className="inline-flex items-center px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black rounded-xl transition-all hover:scale-105 shadow-xl"
               >
                 Iniciar Conversa Agora
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
 
