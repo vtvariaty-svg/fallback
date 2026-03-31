@@ -2,7 +2,9 @@ import { MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 export default function FloatingWhatsApp() {
-  const url = getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.");
+  const url = getWhatsAppUrl(
+    "Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica."
+  );
 
   return (
     <a
