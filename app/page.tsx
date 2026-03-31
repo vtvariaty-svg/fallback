@@ -25,27 +25,27 @@ function HeroSection() {
       
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold text-gray-300 mb-10 animate-fade-in shadow-xl">
         <span className="flex w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
-        Soluções profissionais a partir de R$ 699
+        Automação e sistemas operacionais para clínicas
       </div>
 
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white max-w-5xl mb-8 leading-[0.95] md:leading-[0.9]">
-        Sua empresa no <span className="text-gradient">piloto automático</span>
+        Menos faltas. Menos <span className="text-gradient">processo manual.</span> Mais clínica.
       </h1>
-      
+
       <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mb-12 leading-relaxed font-medium">
-        Desenvolvemos sistemas e automações exclusivas que eliminam o trabalho manual 
-        e transformam sua operação em uma máquina de eficiência.
+        Estruturamos fluxos de atendimento, confirmações, reativações e controle operacional
+        para clínicas que cresceram e não podem mais depender de WhatsApp solto, planilhas e processo manual.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center gap-5 w-full justify-center">
-        <Link 
+        <Link
           href="/contato"
           className="w-full sm:w-auto px-10 py-4 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-[0_10px_30px_-10px_rgba(79,70,229,0.5)] hover:scale-[1.02] active:scale-[0.98]"
         >
-          Solicitar orçamento <ArrowRight className="w-5 h-5" />
+          Solicitar diagnóstico <ArrowRight className="w-5 h-5" />
         </Link>
-        <a 
-          href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
+        <a
+          href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto px-10 py-4 rounded-xl glass hover:bg-surface border-surface-border text-white font-bold text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -58,42 +58,54 @@ function HeroSection() {
 }
 
 function ServicesSection() {
-  const services = [
+  const pains = [
     {
-      icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Automações personalizadas",
-      desc: "Elimine tarefas manuais e repetitivas. Conectamos suas ferramentas para que elas trabalhem sozinhas por você."
+      icon: <MessageCircle className="w-6 h-6 text-primary" />,
+      title: "Atendimento lento e desorganizado no WhatsApp",
+      desc: "Pacientes sem resposta, mensagens perdidas e recepção sobrecarregada com triagem manual no chat."
     },
     {
-      icon: <MonitorSmartphone className="w-6 h-6 text-primary" />,
-      title: "Sistemas sob medida",
-      desc: "Plataformas web construídas especificamente para a realidade e as regras do seu negócio."
+      icon: <Zap className="w-6 h-6 text-primary" />,
+      title: "Confirmações manuais e alto índice de faltas",
+      desc: "Ligar ou mandar mensagem um por um para confirmar consulta consome tempo e ainda assim as faltas acontecem."
     },
     {
       icon: <Settings className="w-6 h-6 text-primary" />,
-      title: "Integrações entre ferramentas",
-      desc: "Sincronize dados entre CRMs, ERPs, planilhas e sistemas diversos de forma automática e segura."
+      title: "Falta de reativação de pacientes inativos",
+      desc: "Pacientes que não retornam somem da agenda sem que a clínica tome nenhuma ação estruturada."
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
-      title: "Soluções digitais para operação",
-      desc: "Painéis de controle internos, relatórios automatizados e portais para organizar sua equipe e clientes."
+      title: "Informações espalhadas entre agenda, planilhas e conversas",
+      desc: "Sem um ponto único de controle, erros acontecem e a equipe perde tempo reconciliando dados."
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6 text-primary" />,
+      title: "Equipe sem visão clara do fluxo operacional",
+      desc: "Sem painel centralizado, o gestor não sabe o que está acontecendo em tempo real na operação."
     }
+  ];
+
+  const solutions = [
+    { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "Fluxos de atendimento e triagem" },
+    { icon: <Zap className="w-5 h-5 text-primary" />, label: "Confirmações e lembretes automáticos" },
+    { icon: <Settings className="w-5 h-5 text-primary" />, label: "Reativação de pacientes inativos" },
+    { icon: <MonitorSmartphone className="w-5 h-5 text-primary" />, label: "Painel operacional interno" },
+    { icon: <Database className="w-5 h-5 text-primary" />, label: "Integrações com ferramentas já usadas pela clínica" },
   ];
 
   return (
     <section id="servicos" className="px-6 max-w-7xl mx-auto w-full scroll-mt-24">
       <div className="mb-16 text-center md:text-left">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">O que nós desenvolvemos</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Problemas que resolvemos na sua clínica</h2>
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl leading-relaxed">
-          Nós simplificamos a tecnologia complexa em ferramentas práticas que 
-          fazem sentido para a realidade do seu dia a dia.
+          Muitas clínicas perdem tempo, sobrecarregam a recepção e deixam oportunidades escapar porque a operação ainda depende de comunicação manual e controles fragmentados.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((s, i) => (
-          <div key={i} className="glass p-10 rounded-3xl glass-hover group">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        {pains.map((s, i) => (
+          <div key={i} className={`glass p-10 rounded-3xl glass-hover group${i === pains.length - 1 && pains.length % 2 !== 0 ? " md:col-span-2 md:max-w-[calc(50%-16px)] mx-auto w-full" : ""}`}>
             <div className="w-14 h-14 bg-background rounded-2xl flex items-center justify-center mb-8 border border-surface-border group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
               {s.icon}
             </div>
@@ -102,33 +114,65 @@ function ServicesSection() {
           </div>
         ))}
       </div>
+
+      <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-[32px] p-10 md:p-16">
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Como estruturamos essa operação</h3>
+        <p className="text-gray-400 text-lg mb-10 max-w-2xl">
+          Cada entrega é mapeada para o fluxo real da sua clínica — não é um template genérico.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {solutions.map((sol, i) => (
+            <div key={i} className="flex items-center gap-4 glass px-6 py-5 rounded-2xl">
+              <div className="shrink-0 w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20">
+                {sol.icon}
+              </div>
+              <span className="text-white font-semibold leading-snug">{sol.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
 
 function WhyChooseSection() {
   const reasons = [
-    { title: "Foco total no ROI", desc: "Não criamos tecnologia por criar. Nossas soluções visam reduzir custos e aumentar faturamento." },
-    { title: "Sistemas 100% Suas", desc: "Diferente de sistemas mensais, você investe em uma ferramenta que é propriedade da sua empresa." },
-    { title: "Escalabilidade Real", desc: "Projetos construídos para crescer sem precisar recomeçar do zero a cada nova etapa." },
-    { title: "Suporte Especializado", desc: "Atendimento direto com quem desenvolveu, sem burocracia ou filas de tickets intermináveis." }
+    {
+      title: "Menos trabalho manual no atendimento",
+      desc: "Confirmações, lembretes e triagem deixam de depender da recepção. A equipe foca no que realmente importa: o paciente."
+    },
+    {
+      title: "Mais controle da operação no dia a dia",
+      desc: "Painel centralizado com visão real do fluxo — sem depender de relatório no fim do mês para saber o que está acontecendo."
+    },
+    {
+      title: "Estrutura adaptada ao fluxo real da clínica",
+      desc: "Não é um template genérico. Mapeamos como sua clínica funciona de fato e construímos em cima disso."
+    },
+    {
+      title: "Implantação por etapas, sem travar a operação",
+      desc: "A clínica não para para implantar. Estruturamos cada entrega para encaixar na rotina sem causar ruptura."
+    },
+    {
+      title: "Atendimento direto com quem entende a solução",
+      desc: "Sem call center, sem abertura de ticket. Você fala diretamente com quem construiu e conhece cada detalhe do sistema."
+    }
   ];
 
   return (
     <section className="px-6 max-w-7xl mx-auto w-full">
       <div className="bg-gradient-to-br from-surface to-background border border-surface-border rounded-[40px] p-10 md:p-20 relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Por que confiar na <span className="text-primary italic">Fallback</span>?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Por que clínicas escolhem a <span className="text-primary italic">Fallback</span>?</h2>
             <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
-              Enquanto o mercado oferece "sistemas de prateleira" que a sua empresa tem que se adaptar, 
-              nós moldamos a tecnologia para seguir os seus processos e a sua cultura de trabalho.
+              Ferramentas genéricas exigem que a sua clínica se adapte a elas. Nós fazemos o contrário: estruturamos a operação em torno do jeito que a sua clínica já funciona — e do jeito que deveria funcionar.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {reasons.map((r, i) => (
-                <div key={i} className="flex flex-col gap-3">
+                <div key={i} className={`flex flex-col gap-3${i === reasons.length - 1 && reasons.length % 2 !== 0 ? " sm:col-span-2 sm:max-w-[calc(50%-16px)] mx-auto w-full" : ""}`}>
                   <div className="flex items-center gap-3 text-white font-bold text-lg">
                     <CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> {r.title}
                   </div>
@@ -150,15 +194,15 @@ function WhyChooseSection() {
 
 function HowItWorksSection() {
   const steps = [
-    { num: "01", title: "Imersão", desc: "Mapeamos os desafios da sua empresa em uma conversa direta e sem jargões técnicos." },
-    { num: "02", title: "Projeto", desc: "Em até 48h, enviamos uma proposta técnica com escopo, prazos reais e investimento." },
-    { num: "03", title: "Execução", desc: "Desenvolvemos o sistema mantendo você atualizado em cada etapa do processo." },
-    { num: "04", title: "Entrega", desc: "Implantamos a solução, treinamos sua equipe e oferecemos o suporte contínuo." }
+    { num: "01", title: "Diagnóstico da operação", desc: "Entendemos como a sua clínica funciona hoje: fluxos, gargalos, ferramentas em uso e onde a equipe perde mais tempo." },
+    { num: "02", title: "Plano de implantação", desc: "Em até 48h, apresentamos um plano por etapas com escopo claro, prazos reais e sem surpresas no meio do caminho." },
+    { num: "03", title: "Desenvolvimento e ajustes", desc: "Construímos cada entrega com a clínica funcionando normalmente. Você acompanha e valida antes de ir ao ar." },
+    { num: "04", title: "Entrega, treinamento e evolução", desc: "A equipe é treinada antes da virada. Após a implantação, seguimos disponíveis para ajustes e novas etapas." }
   ];
 
   return (
     <section id="como-funciona" className="px-6 max-w-7xl mx-auto w-full scroll-mt-24 text-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-20 tracking-tight">Nosso processo <span className="text-primary italic">transparente</span></h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-20 tracking-tight">Uma implantação <span className="text-primary italic">sem travar</span> sua clínica</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
         <div className="hidden md:block absolute top-[40px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-surface-border to-transparent -z-10" />
@@ -179,24 +223,25 @@ function HowItWorksSection() {
 
 function ExamplesSection() {
   const examples = [
-    { title: "Automação de Atendimento (WhatsApp)", tag: "Automação", icon: <MessageCircle className="w-5 h-5" /> },
-    { title: "Sistema Interno de Controle Financeiro", tag: "Sistema Web", icon: <BarChart3 className="w-5 h-5" /> },
-    { title: "Painel Operacional para Logística", tag: "Dashboard", icon: <MonitorSmartphone className="w-5 h-5" /> },
-    { title: "Integração CRM com ERP", tag: "Integração", icon: <Settings className="w-5 h-5" /> },
-    { title: "MVPs para Novas Ideias de Negócio", tag: "Desenvolvimento", icon: <Zap className="w-5 h-5" /> },
+    { title: "Confirmação automática de consultas e procedimentos", tag: "Automação", icon: <Zap className="w-5 h-5" /> },
+    { title: "Reativação de pacientes inativos", tag: "Automação", icon: <Settings className="w-5 h-5" /> },
+    { title: "Atendimento inicial via WhatsApp com triagem", tag: "Atendimento", icon: <MessageCircle className="w-5 h-5" /> },
+    { title: "Painel interno para acompanhamento operacional", tag: "Dashboard", icon: <MonitorSmartphone className="w-5 h-5" /> },
+    { title: "Organização de leads, pacientes e follow-ups", tag: "Gestão", icon: <BarChart3 className="w-5 h-5" /> },
+    { title: "Integrações com agenda e ferramentas da clínica", tag: "Integração", icon: <Database className="w-5 h-5" /> },
   ];
 
   return (
     <section className="px-6 max-w-7xl mx-auto w-full">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Exemplos práticos</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Exemplos de soluções para clínicas</h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            Soluções estruturadas para facilitar rotinas e potencializar empresas de diferentes tamanhos.
+            Cada solução é construída para reduzir o trabalho manual, melhorar o fluxo de pacientes e dar mais controle sobre a operação da clínica.
           </p>
         </div>
         <Link href="/servicos" className="text-primary hover:text-primary-hover font-bold text-lg flex items-center gap-2 group transition-all glass px-6 py-3 rounded-xl border-primary/20">
-          Explorar Soluções <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          Ver todas as soluções <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </Link>
       </div>
 
@@ -220,31 +265,39 @@ function ExamplesSection() {
 function FaqSection() {
   const faqs = [
     {
-      q: "Quanto custa um projeto?",
-      a: "Nossos projetos customizados têm valores acessíveis a partir de R$ 699, variando de acordo com a complexidade, integrações necessárias e escopo total do sistema."
+      q: "Isso serve para clínica pequena ou só para operações maiores?",
+      a: "Serve para clínicas de todos os tamanhos. Consultórios com uma única agenda se beneficiam tanto quanto clínicas com múltiplos profissionais. O que muda é o escopo — não a abordagem. Começamos pelo que gera mais resultado rápido para o seu momento atual."
     },
     {
-      q: "Em quanto tempo fica pronto?",
-      a: "MVPs e automações mais enxutas podem ser entregues em poucos dias. Sistemas mais elaborados possuem um cronograma bem definido que apresentamos logo na fase de planejamento."
+      q: "Dá para começar por uma etapa menor?",
+      a: "Sim, e na maioria dos casos é exatamente assim que recomendamos começar. Mapeamos os maiores gargalos da sua operação e priorizamos a primeira entrega com base no que vai ter impacto mais imediato. Novas etapas são adicionadas conforme a clínica avança."
     },
     {
-      q: "Vocês fazem projetos do zero?",
-      a: "Sim. Transformamos sua ideia de negócio ou processo manual em um sistema completo totalmente do zero, garantindo que atenda exatamente à sua necessidade."
+      q: "Vocês adaptam ao processo da clínica ou precisamos mudar nossa rotina?",
+      a: "Adaptamos ao seu fluxo. Antes de qualquer desenvolvimento, entendemos como a sua clínica opera hoje — quais ferramentas usa, como a equipe trabalha, onde estão os ruídos. A solução é construída em cima disso, não o contrário."
     },
     {
-      q: "Dá para começar pequeno?",
-      a: "Com certeza. Acreditamos na construção de MVPs (Minimum Viable Products). Você pode começar com uma funcionalidade principal e irmos escalando aos poucos."
+      q: "Precisa trocar o sistema atual da clínica?",
+      a: "Não necessariamente. Na maioria dos casos integramos com o que já existe — agenda, prontuário, WhatsApp Business, planilhas. Só recomendamos substituição quando a ferramenta atual é um gargalo real que inviabiliza a automação."
     },
     {
-      q: "Posso evoluir o sistema depois?",
-      a: "Sim. Construímos nossos projetos pensando em escalabilidade. É perfeitamente possível adicionar novos módulos, páginas ou integrações no futuro."
+      q: "Em quanto tempo já dá para perceber resultado?",
+      a: "Automações de confirmação e atendimento inicial costumam entrar em operação em poucas semanas e o impacto na taxa de faltas e no volume de mensagens manuais é percebido rapidamente. Soluções mais estruturadas têm cronograma definido na fase de planejamento."
+    },
+    {
+      q: "Minha equipe vai conseguir usar?",
+      a: "Sim. Tudo é construído com usabilidade em mente — sem telas complexas ou fluxos confusos. Além disso, a equipe é treinada antes da virada para o novo sistema. O objetivo é que as pessoas ganhem tempo, não que travem com tecnologia nova."
+    },
+    {
+      q: "Existe suporte depois da implantação?",
+      a: "Existe. Após a entrega, você tem acesso direto à equipe que desenvolveu a solução. Sem fila de tickets, sem atendimento genérico. Se algo precisar de ajuste ou se surgir uma nova demanda, é só chamar."
     }
   ];
 
   return (
     <section id="faq" className="px-6 max-w-3xl mx-auto w-full scroll-mt-24">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Dúvidas Frequentes</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Dúvidas frequentes</h2>
       </div>
       
       <div className="flex flex-col gap-4">
@@ -275,26 +328,26 @@ function FinalCtaSection() {
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 blur-[100px] rounded-full" />
         
         <h2 className="text-4xl md:text-6xl font-black text-white mb-8 relative z-10 leading-tight">
-          Pronto para otimizar sua empresa?
+          Pronto para organizar a operação da sua clínica?
         </h2>
         <p className="text-white/80 text-lg md:text-2xl max-w-3xl mx-auto mb-12 relative z-10">
-          Fale com nossa equipe sem compromisso. Vamos mapear seus gargalos operacionais e propor a solução exata para resolvê-los.
+          Fale com nossa equipe sem compromisso. Vamos diagnosticar os gargalos de atendimento, confirmações, fluxo operacional e follow-up de pacientes — e propor um plano concreto para resolvê-los.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row justify-center gap-5 relative z-10">
+          <Link
+            href="/contato"
+            className="px-10 py-5 rounded-2xl bg-white text-primary font-black text-xl flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-xl hover:scale-105"
+          >
+            Solicitar diagnóstico <ArrowRight className="w-6 h-6" />
+          </Link>
           <a
-            href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero entender melhor uma solução personalizada para minha empresa.")}
+            href={getWhatsAppUrl("Olá, vi o site da Fallback Automações e quero conversar sobre automação e sistemas para a minha clínica.")}
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-5 rounded-2xl bg-[#25D366] text-white font-black text-xl flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-all shadow-xl hover:shadow-[0_0_30px_-5px_#25D366] hover:scale-105"
           >
-            <MessageCircle className="w-6 h-6" /> Iniciar conversa no WhatsApp
-          </a>
-          <a
-            href={`mailto:${COMPANY_EMAIL}`}
-            className="px-10 py-5 rounded-2xl glass text-white font-bold text-xl flex items-center justify-center gap-3 hover:bg-white/10 transition-all border-white/20 hover:scale-105"
-          >
-            Enviar um E-mail
+            <MessageCircle className="w-6 h-6" /> Falar no WhatsApp
           </a>
         </div>
       </div>

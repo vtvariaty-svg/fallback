@@ -28,7 +28,7 @@ export default function Header() {
           href="/contato"
           className="bg-primary hover:bg-primary-hover text-white text-sm font-black py-3 px-8 rounded-xl transition-all shadow-[0_10px_20px_-5px_rgba(79,70,229,0.4)] hover:scale-105 active:scale-95"
         >
-          Consultoria Grátis
+          Solicitar diagnóstico
         </Link>
       </div>
     </header>

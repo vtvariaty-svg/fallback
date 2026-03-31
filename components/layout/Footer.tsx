@@ -14,15 +14,15 @@ export default function Footer() {
               <span>Fallback<span className="text-primary italic">.</span></span>
             </Link>
             <p className="mt-6 text-gray-400 text-lg leading-relaxed max-w-sm">
-              Especialistas em transformar processos manuais em eficiência digital. Arquitetamos soluções sob medida para o crescimento do seu negócio.
+              Automação e sistemas operacionais para clínicas e consultórios privados que querem reduzir faltas, organizar o atendimento e ganhar eficiência real.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-white mb-4">Soluções</h4>
             <ul className="space-y-3">
-              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Automações personalizadas</Link></li>
-              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Sistemas sob medida</Link></li>
-              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Integrações de plataformas</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Confirmações e lembretes automáticos</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Atendimento e triagem via WhatsApp</Link></li>
+              <li><Link href="/servicos" className="text-sm text-gray-400 hover:text-primary transition-colors">Painel operacional para clínicas</Link></li>
             </ul>
           </div>
           <div>
